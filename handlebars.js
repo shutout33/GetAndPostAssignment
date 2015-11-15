@@ -7,12 +7,12 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3000);
 
-app.get('/',function(req,res){
-  res.render('home.handlebars') //We can omit the .handlebars extension as we do below
+app.get('/get',function(req,res){
+  res.render('get');
 });
 
-app.get('/other-page',function(req,res){
-  res.render('other-page');
+app.get('/post',function(req,res){
+  res.render('post');
 });
 
 app.use(function(req,res){
@@ -28,5 +28,5 @@ app.use(function(err, req, res, next){
 });
 
 app.listen(app.get('port'), function(){
-  console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
+  console.log('Express started on http://52.24.88.40:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
